@@ -13,12 +13,13 @@ If there's anything you think we should add, please let us know at [support@href
 
 ### Table of Contents
 
-- [Links](#index-links)
+- [Links](#index-shortened-links)
   - [Index shortened links](#index-shortened-links)
   - [Short link](#short-link)
 
 
 #### Index shortened links
+
 ```yaml
 uri: https://api.href.ly
 method: get
@@ -34,7 +35,9 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 [⬆ Top](#table-of-contents)
 
+
 #### Short link
+
 ```yaml
 uri: https://api.href.ly
 method: post
