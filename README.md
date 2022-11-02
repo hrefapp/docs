@@ -11,16 +11,13 @@ section.
 If there's anything you think we should add, please let us know at [support@href.ly](mailto:support@href.ly).
 
 
-[](#main)
 ### Table of Contents
 
 - [Links](#index-links)
-  - [Index shortened links](#index-links)
+  - [Index shortened links](#index-shortened-links)
   - [Short link](#short-link)
 
 
-
-[](#index-links)
 #### Index shortened links
 ```yaml
 uri: https://api.href.ly
@@ -37,7 +34,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 [⬆ Top](#main)
 
-[](#short-link)
+[ ](#short-link)
 #### Short link
 ```yaml
 uri: https://api.href.ly
