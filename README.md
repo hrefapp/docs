@@ -101,18 +101,20 @@ curl "https://api.href.ly" \
 *Server Response* `application/json` `200`
 ```json
 {
-  "data": [
+  "data":
+  [
     {
-      "id": 3453245,
-      "hash": "HsmJ2Sl2",
+      "id": 2,
+      "hash": "20QSlQa",
       "long": "https://example.com/index.html",
-      "short": "https://href.ly/HsmJ2Sl2",
-      "tini": "href.ly/HsmJ2Sl2",
-      "html": "",
-      "markdown": "",
+      "short": "https://href.ly/20QSlQa",
+      "tini": "href.ly/20QSlQa",
+      "html": "<a href=\"https://href.ly/20QSlQa\" title=\"Link to an example page\">https://href.ly/20QSlQa</a>",
+      "markdown": "[Link to an example page](https://href.ly/20QSlQa)",
       "customized": false,
-      "description": "",
-      "shots": 100
+      "description": "Link to an example page",
+      "shots": 0,
+      "created_at": "2022-11-03T00:32:53.000000Z"
     }
   ]
 }
