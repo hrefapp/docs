@@ -42,7 +42,8 @@ it in each request to identify yourself.
 
 E.g,
 ```bash
-curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" -H "Content-Type: application/json"
+curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" \
+  -H "Content-Type: application/json"
 ```
 
 [⬆ Top](#table-of-contents)
