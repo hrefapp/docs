@@ -42,7 +42,7 @@ it in each request to identify yourself.
 
 E.g,
 ```bash
-curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469"
+curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" -H "Content-Type: application/json"
 ```
 
 [⬆ Top](#table-of-contents)
@@ -77,18 +77,43 @@ E.g,
 
 #### Index shortened links
 
+Get your shortened links.
+
 ```yaml
 uri: https://api.href.ly
 method: get
 authentication: everyone
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+*E.g, using CURL for anonymous users*
+```bash
+curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" -H "Content-Type: application/json"
+```
+
+*E.g, using CURL for registed users*
+```bash
+curl "https://api.href.ly" -H "Content-Type: application/json" -H "Authorization: Bearer <your-token>"
+```
+
+*Server Response* `application/json` `200`
+```json
+{
+  "data": [
+    {
+      "id": 3453245,
+      "hash": "HsmJ2Sl2",
+      "long": "https://example.com/index.html",
+      "short": "https://href.ly/HsmJ2Sl2",
+      "tini": "href.ly/HsmJ2Sl2",
+      "html": "",
+      "markdown": "",
+      "customized": false,
+      "description": "",
+      "shots": 100
+    }
+  ]
+}
+```
 
 [⬆ Top](#table-of-contents)
 
