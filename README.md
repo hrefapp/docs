@@ -85,20 +85,20 @@ method: get
 authentication: everyone
 ```
 
-*E.g, using CURL for anonymous users*
 ```bash
+# E.g, using CURL for anonymous users
 curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" \
   -H "Content-Type: application/json"
 ```
 
-*E.g, using CURL for registed users*
 ```bash
+# E.g, using CURL for registed users
 curl "https://api.href.ly" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <your-token>"
 ```
 
-*Server Response* `application/json` `200`
+Server Response `application/json` `200`
 ```json
 {
   "data":
@@ -125,17 +125,55 @@ curl "https://api.href.ly" \
 
 #### Short link
 
+Store and short a link.
+
 ```yaml
 uri: https://api.href.ly
 method: post
 authentication: everyone
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Request Content `application/json`
+
+| Name          | Description                                                                                                        |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `long`        | `required` `url` The long link that needs to be shortened.                                                         |
+| `description` | `optional` `string` A description of the link you are shortening.                                                  |
+| `aid`         | `optional` `uuid` Required if the `Authorization` header is not present.                                           |
+| `hash`        | `optional` `string` If you are a registered user you can customize the short link slug. Ignored if aid is present. |
+
+```bash
+# E.g, using CURL for anonymous users
+curl -X "POST" "https://api.href.ly" \
+  -H "Content-Type: application/json" \
+  -d '{"aid": "d5e06094-dc00-4c70-8d2d-41ddc798c469", "long": "https://example.com"}'
+```
+
+```bash
+# E.g, using CURL for registered users
+curl -X "POST" "https://api.href.ly" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <your-token>" \
+  -d '{"long": "https://example.com"}'
+```
+
+Server Response `application/json` `201`
+```json
+{
+  "data": {
+    "id": 3,
+    "hash": "o1CzXyo",
+    "long": "https://example.com",
+    "short": "https://href.ly/o1CzXyo",
+    "tini": "href.ly/o1CzXyo",
+    "html": "<a href=\"https://href.ly/o1CzXyo\" title=\"https://href.ly/o1CzXyo\">https://href.ly/o1CzXyo</a>",
+    "markdown": "[https://href.ly/o1CzXyo](https://href.ly/o1CzXyo)",
+    "customized": false,
+    "description": "",
+    "shots": 0,
+    "created_at": "2022-11-03T00:44:38.000000Z"
+  }
+}
+```
 
 [⬆ Top](#table-of-contents)
