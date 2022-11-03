@@ -13,9 +13,66 @@ If there's anything you think we should add, please let us know at [support@href
 
 ### Table of Contents
 
+- [Headers](#headers)
+- [Authentication](#authentication-for-anonymous-users)
+  - [Anonymous](#authentication-for-anonymous-users)
+  - [Registered Users](#authentication-for-registered)
 - [Links](#index-shortened-links)
   - [Index shortened links](#index-shortened-links)
   - [Short link](#short-link)
+
+
+### Headers
+
+All requests must have the following mandatory headers.
+
+```json
+{
+  "Content-Type": "application/json"
+}
+```
+
+### Authentication for anonymous users
+
+To connect to our API has an anonymous user the `Authorization` header is not required.
+Here you must send an `aid` (Anonymous User Identifier), in UUID format in the query
+parameters of the request. Also, keep in mind that the requests are stateless,
+which means that you will be in charge of storing this unique value and sending
+it in each request to identify yourself.
+
+E.g,
+```bash
+curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469"
+```
+
+[⬆ Top](#table-of-contents)
+
+
+### Authentication for registered users
+
+To connect to our API has a subscribed user you must use the `Authorization` header.
+This can be obtained from your account, under developer settings. This token has
+full access to your shortened links, be careful how you use it in your apps.
+
+[⬆ Top](#table-of-contents)
+
+
+### Errors
+
+When we detect an error in the request, we will return a HTTP `400`, authentication
+errors will return a code `401`, authorization errors will return a code `403`, every
+error will return a JSON payload with a single key `message` containing the error message.
+If you aren't receiving errors, make sure you've set `"Accept: application/json"`
+in your request headers.
+
+E.g,
+```json
+{
+  "message": "This action is unauthorized"
+}
+```
+
+[⬆ Top](#table-of-contents)
 
 
 #### Index shortened links
