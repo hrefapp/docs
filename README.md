@@ -87,12 +87,15 @@ authentication: everyone
 
 *E.g, using CURL for anonymous users*
 ```bash
-curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" -H "Content-Type: application/json"
+curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" \
+  -H "Content-Type: application/json"
 ```
 
 *E.g, using CURL for registed users*
 ```bash
-curl "https://api.href.ly" -H "Content-Type: application/json" -H "Authorization: Bearer <your-token>"
+curl "https://api.href.ly" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <your-token>"
 ```
 
 *Server Response* `application/json` `200`
