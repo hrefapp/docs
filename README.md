@@ -16,7 +16,7 @@ If there's anything you think we should add, please let us know at [support@href
 - [Headers](#headers)
 - [Authentication](#authentication-for-anonymous-users)
   - [Anonymous](#authentication-for-anonymous-users)
-  - [Registered Users](#authentication-for-registered)
+  - [Registered users](#authentication-for-registered-users)
 - [Links](#index-shortened-links)
   - [Index shortened links](#index-shortened-links)
   - [Short link](#short-link)
@@ -35,8 +35,8 @@ All requests must have the following mandatory headers.
 ### Authentication for anonymous users
 
 To connect to our API has an anonymous user the `Authorization` header is not required.
-Here you must send an `aid` (Anonymous User Identifier), in UUID format in the query
-parameters of the request. Also, keep in mind that the requests are stateless,
+Here you must send an `aid` (Anonymous User Identifier), in UUID format, this parameter
+should be passed on the query request. Also, keep in mind that the requests are stateless,
 which means that you will be in charge of storing this unique value and sending
 it in each request to identify yourself.
 
