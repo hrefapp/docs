@@ -42,7 +42,7 @@ it in each request to identify yourself.
 
 E.g,
 ```bash
-curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" \
+curl "https://api.href.ly/links?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" \
   -H "Content-Type: application/json"
 ```
 
@@ -81,20 +81,20 @@ E.g,
 Get your shortened links.
 
 ```yaml
-uri: https://api.href.ly
+uri: https://api.href.ly/links
 method: get
 authentication: everyone
 ```
 
 ```bash
 # E.g, using CURL for anonymous users
-curl "https://api.href.ly?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" \
+curl "https://api.href.ly/links?aid=d5e06094-dc00-4c70-8d2d-41ddc798c469" \
   -H "Content-Type: application/json"
 ```
 
 ```bash
 # E.g, using CURL for registed users
-curl "https://api.href.ly" \
+curl "https://api.href.ly/links" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <your-token>"
 ```
@@ -129,7 +129,7 @@ Server Response `application/json` `200`
 Store and short a link.
 
 ```yaml
-uri: https://api.href.ly
+uri: https://api.href.ly/links
 method: post
 authentication: everyone
 ```
@@ -145,14 +145,14 @@ Request Content `application/json`
 
 ```bash
 # E.g, using CURL for anonymous users
-curl -X "POST" "https://api.href.ly" \
+curl -X "POST" "https://api.href.ly/links" \
   -H "Content-Type: application/json" \
   -d '{"aid": "d5e06094-dc00-4c70-8d2d-41ddc798c469", "long": "https://example.com"}'
 ```
 
 ```bash
 # E.g, using CURL for registered users
-curl -X "POST" "https://api.href.ly" \
+curl -X "POST" "https://api.href.ly/links" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <your-token>" \
   -d '{"long": "https://example.com"}'
